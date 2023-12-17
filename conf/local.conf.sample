@@ -23,7 +23,7 @@ MACHINE_FEATURES_remove = "apm"
 
 # IMAGE_FSTYPES = "tar.xz"
 # generate rpi-sdimage for use with imager software such as etcher
-IMAGE_FSTYPES = "tar.xz ext3 rpi-sdimage"
+IMAGE_FSTYPES = "tar.xz ext3 rpi-sdimg"
 
 MACHINE = "raspberrypi4-64"
 
