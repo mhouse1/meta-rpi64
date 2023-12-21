@@ -66,7 +66,8 @@ fi
 if [ "x${3}" = "x" ]; then
     TARGET_HOSTNAME=rpi4
 else
-    TARGET_HOSTNAME=${3}
+    TARGET_HOSTNAME=${3} # resolves to raspberrypi4-64
+    TARGET_HOSTNAME=mhouseos
 fi
 
 echo "MACHINE: $MACHINE"
