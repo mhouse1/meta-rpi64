@@ -1,5 +1,5 @@
 SUMMARY = "A console development image customized for the rpi"
-HOMEPAGE = "http://www.jumpnowtek.com"
+HOMEPAGE = "http://www.mhouseos.com"
 
 require images/basic-dev-image.bb
 

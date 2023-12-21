@@ -1,5 +1,5 @@
 SUMMARY = "IQAudio Pi-DigiAMP+ gpio mute pin enable"
-HOMEPAGE = "http://www.jumpnowtek.com/"
+HOMEPAGE = "http://www.mhouseos.com/"
 SECTION = "console"
 
 LICENSE = "MIT"
