@@ -1,3 +1,10 @@
+# overview
+an attempt to add mender to dunfell , currently the build returns error `Nothing PROVIDES 'bcm2835-bootfiles'`
+i attempted to add  github.com/mirzak mender branch rpi-boot-part-update which includes some fixes but it looks like that fix is only applicable to the older sumo branch
+
+so as of right now mender is not working.
+
+
 ## Warning
 Currently only working with raspberrypi4 boards.
 
