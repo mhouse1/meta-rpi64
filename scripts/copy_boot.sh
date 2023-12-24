@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KERNEL_IMAGETYPE=uImage
+KERNEL_IMAGETYPE=Image
 
 if [ -z "${MACHINE}" ]; then
     # try to find it

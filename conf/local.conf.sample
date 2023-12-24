@@ -46,7 +46,7 @@ MACHINE = "raspberrypi4-64"
 #MACHINE = "raspberrypi-cm"
 #MACHINE = "raspberrypi-cm3"
 
-KERNEL_IMAGETYPE = "uImage"
+KERNEL_IMAGETYPE = "Image"
 
 # see https://github.com/mendersoftware/meta-mender/tree/dunfell/meta-mender-raspberrypi
 RPI_USE_U_BOOT = "1"
