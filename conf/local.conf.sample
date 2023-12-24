@@ -26,7 +26,7 @@ MACHINE_FEATURES_remove = "apm"
 
 # IMAGE_FSTYPES = "tar.xz ext3"
 # generate rpi-sdimage for use with imager software such as etcher
-IMAGE_FSTYPES = "rpi-sdimg"
+IMAGE_FSTYPES = "ext4"
 
 # Choose the board you are building for
 #MACHINE = "raspberrypi"
@@ -39,7 +39,16 @@ MACHINE = "raspberrypi4-64"
 #MACHINE = "raspberrypi-cm"
 #MACHINE = "raspberrypi-cm3"
 
-KERNEL_IMAGETYPE = "Image"
+KERNEL_IMAGETYPE = "uImage"
+
+MENDER_PARTITION_ALIGNMENT_KB = "4096"
+MENDER_BOOT_PART_SIZE_MB = "40"
+IMAGE_DEPENDS_sdimg += " bcm2835-bootfiles"
+# raspberrypi files aligned with mender layout requirements
+IMAGE_BOOT_FILES_append = " boot.scr u-boot.bin;${SDIMG_KERNELIMAGE}"
+IMAGE_INSTALL_append = " kernel-image kernel-devicetree"
+MENDER_ARTIFACT_NAME = "release-1"
+INHERIT += "mender-full"
 
 # uncomment for kernels < 5.6
 WIREGUARD_COMPAT = "1"
