@@ -30,4 +30,4 @@ Latest commits
     meta-security c74cc97
     meta-jumpnow b399563
 
-meta-rpi64 layer maintainer: Scott Ellis <scott@mhouseos.com>
+meta-rpi64 layer maintainer: M House <michaelhousera@gmail.com>
