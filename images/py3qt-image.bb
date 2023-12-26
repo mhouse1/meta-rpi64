@@ -26,13 +26,13 @@ CORE_OS = " \
 QT5_PKGS += " \
     python3-pyqt5 \
     pytouch \
-    python3-pytest \
-    python3-pytest-html \
 "
 
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${QT5_PKGS} \
+    python3-pytest \
+    python3-pytest-html \
 "
 
 # set_local_timezone() {
