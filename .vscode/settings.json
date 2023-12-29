@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/Users/michaelhouse/Documents/mhouse_yocto/meta-rpi64/sources/poky/bitbake/lib"
+    ],
+    "python.analysis.extraPaths": [
+        "/Users/michaelhouse/Documents/mhouse_yocto/meta-rpi64/sources/poky/bitbake/lib"
+    ]
+}
