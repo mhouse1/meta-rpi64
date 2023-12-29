@@ -5,8 +5,8 @@ iface lo inet loopback
 # below, eth0 and eth1 are configured so we can talk to local devices 
 # on the 192.x.x.x addresses and access ethernet at the same time
 
-#auto eth0
-#iface eth0 inet dhcp
+# auto eth0
+# iface eth0 inet dhcp
 
 # enable this to use the rpi ethernet port as a local port
 auto eth0
