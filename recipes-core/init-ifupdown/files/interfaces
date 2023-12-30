@@ -1,0 +1,27 @@
+# /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# below, eth0 and eth1 are configured so we can talk to local devices 
+# on the 192.x.x.x addresses and access ethernet at the same time
+
+#auto eth0
+#iface eth0 inet dhcp
+
+# enable this to use the rpi ethernet port as a local port
+auto eth0
+iface eth9 inet static
+address 192.168.8.101
+netmask 255.255.255.0
+
+# Assuming usb ethernet adapter is connected to eth1
+auto eth1
+iface eth1 inet dhcp
+
+
+# auto wlan0
+# iface wlan0 inet dhcp
+#        wireless_mode managed
+#        wpa-conf /etc/wpa_supplicant.conf

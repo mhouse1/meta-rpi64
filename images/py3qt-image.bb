@@ -10,6 +10,7 @@ DEPENDS += "bootfiles"
 
 CORE_OS = " \
     firewall \
+    init-ifupdown \
     ifupdown \
     iptables \
     kernel-modules \
