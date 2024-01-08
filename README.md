@@ -19,4 +19,4 @@ Latest commits
     meta-security c79262a
     meta-raspberrypi dacad93
 
-meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
+meta-rpi layer maintainer: Mhouse <mhouse@mhouse.com>
