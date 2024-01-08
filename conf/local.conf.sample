@@ -50,7 +50,7 @@ EXTRA_USERS_PARAMS = "usermod -P mhouseos root; "
 PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"
 INHERIT += "rm_work"
-CONF_VERSION = "1"
+CONF_VERSION = "2"
 
 DISABLE_RPI_BOOT_LOGO = "1"
 
