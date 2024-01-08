@@ -14,14 +14,25 @@ INIT_MANAGER = "systemd"
 
 MACHINE_FEATURES:remove = "apm vc4graphics vfat"
 
-IMAGE_FSTYPES = "tar.xz"
+# IMAGE_FSTYPES = "tar.xz ext3"
+# generate rpi-sdimage for use with imager software such as etcher
+# IMAGE_FSTYPES = "rpi-sdimg"
+
+IMAGE_INSTALL_append = " rauc"
+
+IMAGE_FSTYPES="tar.bz2 ext4 wic.bz2 wic.bmap"
+SDIMG_ROOTFS_TYPE="ext4"
+ENABLE_UART = "1"
+RPI_USE_U_BOOT = "1"
+PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
+
+WKS_FILE = "sdimage-dual-raspberrypi.wks.in"
 
 MACHINE = "raspberrypi4-64"
 
 KERNEL_IMAGETYPE = "Image"
 
 DISABLE_OVERSCAN = "1"
-# ENABLE_UART = "1"
 SERIAL_CONSOLES = "115200;ttyS0"
 
 # PREFERRED_VERSION_linux-raspberrypi = "5.10.%"
@@ -39,6 +50,7 @@ SDKMACHINE = "x86_64"
 # for no root passwd uncomment the following and comment the two extra user lines
 EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
+# does not work in kirkstone anymore since plaintext -P passwords are not supported
 # for a root passwd, change mhouseos below to your password
 #INHERIT += "extrausers"
 #EXTRA_USERS_PARAMS = "usermod -P mhouseos root; "
