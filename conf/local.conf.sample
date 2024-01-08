@@ -5,6 +5,7 @@
 LICENSE_FLAGS_ACCEPTED = "commercial"
 
 DISTRO_FEATURES = "ext2 security systemd usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES += "rauc"
 
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio sysvinit"
 
