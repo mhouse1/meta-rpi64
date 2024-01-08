@@ -1,72 +1,34 @@
-# Local configuration for meta-rpi images
-# Yocto Project 3.1 Poky distribution [dunfell] branch
-# This is a sysvinit system
+# Local configuration for meta-rpi64 images
+# Yocto Project 4.0 Poky distribution [kirkstone] branch
+# This is a systemd system
 
-# mask wireguard from meta-openembedded/meta-networking
-# use version in meta-jumpnow to support kernels < 5.6
-# with wireguard-linux-compat
-BBMASK = "meta-networking/recipes-kernel/wireguard"
+LICENSE_FLAGS_ACCEPTED = "commercial"
 
-LICENSE_FLAGS_WHITELIST = "commercial"
+DISTRO_FEATURES = "ext2 security systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
-DISTRO_FEATURES = "bluetooth ext2 opengl usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio sysvinit"
 
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
+DISTRO_FEATURES:remove = "ptest"
 
-PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
-PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
+INIT_MANAGER = "systemd"
 
-PREFERRED_PROVIDER_udev = "eudev"
-DISTRO_FEATURES_append = " systemd"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
-VIRTUAL-RUNTIME_init_manager = "systemd"
-VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
+MACHINE_FEATURES:remove = "apm vc4graphics vfat"
 
-MACHINE_FEATURES_remove = "apm"
+IMAGE_FSTYPES = "tar.xz"
 
-# IMAGE_FSTYPES = "tar.xz ext3"
-# generate rpi-sdimage for use with imager software such as etcher
-# IMAGE_FSTYPES = "rpi-sdimg"
-
-IMAGE_INSTALL_append = " rauc"
-
-IMAGE_FSTYPES="tar.bz2 ext4 wic.bz2 wic.bmap"
-SDIMG_ROOTFS_TYPE="ext4"
-ENABLE_UART = "1"
-RPI_USE_U_BOOT = "1"
-PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
-
-WKS_FILE = "sdimage-dual-raspberrypi.wks.in"
-
-
-# Choose the board you are building for
-#MACHINE = "raspberrypi"
-#MACHINE = "raspberrypi0"
-#MACHINE = "raspberrypi0-wifi"
-#MACHINE = "raspberrypi2"
-#MACHINE = "raspberrypi3"
-#MACHINE = "raspberrypi4"
 MACHINE = "raspberrypi4-64"
-#MACHINE = "raspberrypi-cm"
-#MACHINE = "raspberrypi-cm3"
 
 KERNEL_IMAGETYPE = "Image"
 
-# uncomment for kernels < 5.6
-WIREGUARD_COMPAT = "1"
-
-#DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
-# SERIAL_CONSOLES = "115200;ttyAMA0"
-SERIAL_CONSOLES = ""
+# ENABLE_UART = "1"
+SERIAL_CONSOLES = "115200;ttyS0"
 
-# default to 5.4
-PREFERRED_VERSION_linux-raspberrypi = "5.4.%"
-# PREFERRED_VERSION_linux-raspberrypi = "4.19.%"
+# PREFERRED_VERSION_linux-raspberrypi = "5.10.%"
 
-# DL_DIR = "/src/oe"
-# SSTATE_DIR = "/oe8/rpi64/sstate-cache"
-# TMPDIR = "/oe8/rpi64/tmp-zeus"
+#DL_DIR = "/oe/dl/kirkstone"
+#SSTATE_DIR = "/oe/rpi64/sstate-cache"
+#TMPDIR = "/oe/rpi64/tmp"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
