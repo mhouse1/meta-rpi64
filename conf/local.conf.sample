@@ -18,7 +18,7 @@ MACHINE_FEATURES:remove = "apm vc4graphics vfat"
 # generate rpi-sdimage for use with imager software such as etcher
 # IMAGE_FSTYPES = "rpi-sdimg"
 
-IMAGE_INSTALL_append = " rauc"
+IMAGE_INSTALL:append = " rauc"
 
 IMAGE_FSTYPES="tar.bz2 ext4 wic.bz2 wic.bmap"
 SDIMG_ROOTFS_TYPE="ext4"
