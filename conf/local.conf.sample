@@ -37,11 +37,11 @@ PACKAGE_CLASSES = "package_ipk"
 SDKMACHINE = "x86_64"
 
 # for no root passwd uncomment the following and comment the two extra user lines
-# EXTRA_IMAGE_FEATURES = "debug-tweaks"
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # for a root passwd, change mhouseos below to your password
-INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = "usermod -P mhouseos root; "
+#INHERIT += "extrausers"
+#EXTRA_USERS_PARAMS = "usermod -P mhouseos root; "
 
 # this will force root to change password on first login
 # INHERIT += "chageusers"
