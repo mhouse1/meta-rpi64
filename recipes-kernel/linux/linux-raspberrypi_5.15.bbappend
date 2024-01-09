@@ -185,6 +185,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/ov5647.dtbo \
     overlays/ov7251.dtbo \
     overlays/ov9281.dtbo \
+    overlays/overlay_map.dtb \
     overlays/papirus.dtbo \
     overlays/pca953x.dtbo \
     overlays/pcie-32bit-dma.dtbo \

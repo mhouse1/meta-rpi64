@@ -21,6 +21,8 @@ MACHINE_FEATURES:remove = "apm vc4graphics vfat"
 
 IMAGE_INSTALL:append = " rauc"
 
+RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/overlay_map.dtb"
+
 IMAGE_FSTYPES="tar.bz2 ext4 wic.bz2 wic.bmap"
 SDIMG_ROOTFS_TYPE="ext4"
 ENABLE_UART = "1"
